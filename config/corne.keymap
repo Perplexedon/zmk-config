@@ -26,7 +26,6 @@
         combo_pass0 {
             timeout-ms = <50>;
             key-positions = <13 14 15 16>;
-            layers =
             bindings = <&pass0>;
         };
         combo_pass1 {
