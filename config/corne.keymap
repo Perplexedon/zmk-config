@@ -39,7 +39,7 @@
         plus_equals: plus_equals {
             compatible: "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp LS(EQUALS)>, <&kp EQUALS>;
+            bindings = <&kp PLUS>, <&kp EQUALS>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
