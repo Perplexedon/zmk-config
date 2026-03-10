@@ -13,12 +13,16 @@
         pass0: pass0 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press &kp LSHFT>, <&macro_tap &kp B>, <&macro_release &kp LSHFT>, <&macro_tap &kp T &kp C &kp Y &kp W &kp T &kp S>;
-        };
+            bindings = 
+                <&macro_tap &kp LS(B)>,
+                <&macro_tap &kp T &kp C &kp Y &kp W &kp T &kp S>;
+            };
         pass1: pass1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press &kp LSHFT>, <&macro_tap &kp B>, <&macro_release &kp LSHFT>, <&macro_tap &kp T &kp C &kp Y &kp W &kp T &kp S &kp N1 &kp N4 &kp N2 &kp N3>;
+            bindings = 
+                <&macro_tap &kp LS(B)>,
+                <&macro_tap &kp T &kp C &kp Y &kp W &kp T &kp S &kp N1 &kp N4 &kp N2 &kp N3>;
         };
     };
     combos {
