@@ -9,6 +9,20 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
+    combos {
+        compatible = "zmk,combos";
+        combo_pass0 {
+            timeout-ms = <50>;
+            key-positions = <13 14 15 16>;
+            bindings = <&kp LS(B) &kp T &kp C &kp Y &kp W &kp T &kp S>;
+        };
+        combo_pass1 {
+            timeout-ms = <50>;
+            key-positions = <25 26 27 28>;
+            bindings = <&kp LS(B) &kp T &kp C &kp Y &kp W &kp T &kp S &kp N1 &kp N4 &kp 2 &kp 3>;
+        };
+    };
+
         keymap {
                 compatible = "zmk,keymap";
 
@@ -57,19 +71,4 @@
                         >;
                 };
         };
-
-   combos {
-        compatible = "zmk,combos";
-        combo_pass0 {
-            timeout-ms = <50>;
-            key-positions = <13 14 15 16>;
-            bindings = <&kp LS(B) &kp T &kp C &kp Y &kp W &kp T &kp S>;
-        };
-        combo_pass1 {
-            timeout-ms = <50>;
-            key-positions = <25 26 27 28>;
-            bindings = <&kp LS(B) &kp T &kp C &kp Y &kp W &kp T &kp S &kp N1 &kp N4 &kp 2 &kp 3>;
-        };
-    }
-
 };
