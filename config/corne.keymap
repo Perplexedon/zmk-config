@@ -13,16 +13,16 @@
         pass0: pass0 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = 
-                <&macro_tap &kp LS(B)>,
-                <&macro_tap &kp T &kp C &kp Y &kp W &kp T &kp S>;
-            };
+            wait-ms = <20>;
+            tap-ms = <20>;
+            bindings = <&macro_tap &kp LS(B)>, <&macro_tap &kp T &kp C &kp Y &kp W &kp T &kp S>;
+        };
         pass1: pass1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = 
-                <&macro_tap &kp LS(B)>,
-                <&macro_tap &kp T &kp C &kp Y &kp W &kp T &kp S &kp N1 &kp N4 &kp N2 &kp N3>;
+            wait-ms = <20>;
+            tap-ms = <20>;
+            bindings = <&macro_tap &kp LS(B)>, <&macro_tap &kp T &kp C &kp Y &kp W &kp T &kp S &kp N1 &kp N4 &kp N2 &kp N3>;
         };
     };
     combos {
@@ -43,7 +43,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp PLUS>, <&kp EQUALS>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
+            mods = <MOD_LSFT MOD_RSFT>;
         };
     };
     keymap {
