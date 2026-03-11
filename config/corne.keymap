@@ -69,7 +69,7 @@
                 &none &none  
                 &kp LSHFT &kp LCTRL &kp LALT &kp LGUI &kp ENTER      &kp F11 &kp F12 &kp GRAVE &kp HOME &kp END
                 &none
-                &trans &trans &trans      &kp LCTRL &trans &trans
+                &trans &kp LCTRL &trans      &kp LCTRL &trans &trans
             >;
         };
         sym_layer {
