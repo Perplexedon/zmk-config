@@ -11,8 +11,6 @@
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 600
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 10
 #include <dt-bindings/zmk/pointing.h>
-#define ms_move(name, x, y) name: name { compatible = "zmk,behavior-mouse-move"; x-speed = <x>; y-speed = <y>; }
-
 
 / {
     macros {
@@ -51,14 +49,6 @@
             bindings = <&kp PLUS>, <&kp EQUAL>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-        ms_move(ms_u, 0, -100);
-        ms_move(ms_ur, 70, -70);
-        ms_move(ms_r, 100, 0);
-        ms_move(ms_dr, 70, 70);
-        ms_move(ms_d, 0, 100);
-        ms_move(ms_dl, -70, 70);
-        ms_move(ms_l, -100, 0);
-        ms_move(ms_ul, -70, -70);
     };
     keymap {
         compatible = "zmk,keymap";
@@ -71,7 +61,7 @@
                 &none &none
                 &kp Z &kp X &kp C &kp D &kp V           &kp K &kp H &kp COMMA &kp DOT &kp FSLH         
                 &none 
-                &kp BSPC &kp SPACE &mo 1          &mo 2 &kp LSHFT &mo 3
+                &kp BSPC &kp SPACE &mo cmd          &mo sym &kp LSHFT &mo ms
             >;
         };
         cmd {
@@ -98,14 +88,6 @@
                 &trans &trans &kp LCTRL           &trans &trans &trans
             >;
         };
-        ms {
-            bindings = <&none    
-                &none &ms_dl &ms_ur &none &none           &none &none &none &none &mo 4           &none &none
-                &ms_l &ms_u  &ms_d  &ms_r &none           &none &mkp MB2 &mkp MB1 &none &none           &none &none
-                &none &ms_dr &ms_ul &none &none           &none &none &none &none &none           &none
-                &trans &trans &kp LCTRL           &trans &trans &trans
-            >;
-        };
         bt {
             bindings = <
                 &none    
@@ -118,5 +100,33 @@
                 &trans &trans &trans        &trans &trans &trans
             >;
         };
+
+        ms {
+            bindings = <&none    
+                &trans      &mmv -70 70  &mmv 70 -70  &trans     &trans           &trans &trans &trans &trans &mo bt               &none &none
+                &mmv -100 0 &mmv 0 -100  &mmv 0 100   &mmv 100 0 &trans           &trans &mkp MB2 &mkp MB1 &mo ms_slow &mo ms_fast           &none &none
+                &trans      &mmv 70 70   &mmv 70 -70  &trans     &trans           &trans &trans &trans &trans &trans               &none
+                &trans &trans &kp LCTRL           &trans &trans &trans
+            >;
+        };
+        ms_fast {
+            bindings = <&none    
+                &trans      &mmv -140 140  &mmv 140 -140  &trans     &trans           &trans &trans &trans &trans &trans               &none &none
+                &mmv -200 0 &mmv 0 -200    &mmv 0 200     &mmv 200 0 &trans           &trans &mkp MB2 &mkp MB1 &trans &trans            &none &none
+                &trans      &mmv 140 140   &mmv 140 -140  &trans     &trans           &trans &trans &trans &trans &trans               &none
+                &trans &trans &kp LCTRL           &trans &trans &trans
+            >;
+        };
+        ms_slow {
+            bindings = <&none    
+                &trans      &mmv -35 35  &mmv 35 -35  &trans     &trans           &trans &trans &trans &trans &trans               &none &none
+                &mmv -50 0  &mmv 0 -50   &mmv 0 50    &mmv 50 0  &trans           &trans &mkp MB2 &mkp MB1 &trans &trans            &none &none
+                &trans      &mmv 35 35   &mmv 35 -35  &trans     &trans           &trans &trans &trans &trans &trans               &none
+                &trans &trans &kp LCTRL           &trans &trans &trans
+            >;
+        };
+
+
+
     };
 };
