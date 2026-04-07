@@ -11,6 +11,8 @@
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 600
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 10
 #include <dt-bindings/zmk/pointing.h>
+#define ms_move(name, x, y) name: name { compatible = "zmk,behavior-mouse-move"; x-speed = <x>; y-speed = <y>; };    
+
 
 / {
     macros {
@@ -28,66 +30,6 @@
             tap-ms = <5>;
             bindings = <&macro_press &kp LSHFT>, <&macro_tap &kp B>, <&macro_release &kp LSHFT>, <&macro_tap &kp T &kp C &kp Y &kp W &kp T &kp S &kp N1 &kp N4 &kp N2 &kp N3>;
         };        
-        ms_l: ms_l {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <1>;
-            bindings = <&macro_tap &mmv MOVE_X(-100)>;
-        };
-        ms_ul: ms_ul {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <1>;
-            bindings = <&macro_tap &mmv MOVE_X(-70) &mmv MOVE_Y(70)>;
-        };
-        ms_u: ms_u {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <1>;
-            bindings = <&macro_tap &mmv MOVE_Y(100)>;
-        };
-        ms_ur: ms_ur {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <1>;
-            bindings = <&macro_tap &mmv MOVE_X(70) &mmv MOVE_Y(70)>;
-        };
-        ms_r: ms_r {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <1>;
-            bindings = <&macro_tap &mmv MOVE_X(100)>;
-        };
-        ms_dr: ms_dr {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <1>;
-            bindings = <&macro_tap &mmv MOVE_X(70) &mmv MOVE_Y(-70)>;
-        };
-        ms_d: ms_d {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <1>;
-            bindings = <&macro_tap &mmv MOVE_Y(-100)>;
-        };
-        ms_dl: ms_dl {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <1>;
-            bindings = <&macro_tap &mmv MOVE_X(-70) &mmv MOVE_Y(-70)>;
-        };
-
-
-
-
     };
     combos {
         compatible = "zmk,combos";
@@ -109,6 +51,14 @@
             bindings = <&kp PLUS>, <&kp EQUAL>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+        ms_move(ms_u, 0, -100);
+        ms_move(ms_ur, 70, -70);
+        ms_move(ms_r, 100, 0);
+        ms_move(ms_dr, 70, 70);
+        ms_move(ms_d, 0, 100);
+        ms_move(ms_dl, -70, 70);
+        ms_move(ms_l, -100, 0);
+        ms_move(ms_ul, -70, -70);
     };
     keymap {
         compatible = "zmk,keymap";
