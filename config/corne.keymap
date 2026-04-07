@@ -78,25 +78,25 @@
         };
         ms {
             bindings = <&none    
-                &trans      &mmv -70 70  &mmv 70 -70  &trans     &trans           &trans &trans &trans &trans &mo 6                    &none &none
-                &mmv -100 0 &mmv 0 -100  &mmv 0 100   &mmv 100 0 &trans           &trans &mkp MB2 &mkp MB1 &mo 5 &mo 4                 &none &none
-                &trans      &mmv 70 70   &mmv -70 -70 &trans     &trans           &trans &trans &trans &trans &trans                   &none
+                &trans        &mmv <-70 70>  &mmv <70 -70>    &trans       &trans           &trans &trans &trans &trans &mo 6                    &none &none
+                &mmv <-100 0> &mmv <0 -100>  &mmv <0 100>     &mmv <100 0> &trans           &trans &mkp MB2 &mkp MB1 &mo 5 &mo 4                 &none &none
+                &trans        &mmv <70 70>   &mmv <-70 -70>   &trans       &trans           &trans &trans &trans &trans &trans                   &none
                 &trans &trans &kp LCTRL           &trans &trans &trans
             >;
         };
         ms_fast {
             bindings = <&none    
-                &trans      &mmv -140 140  &mmv 140 -140  &trans     &trans           &trans &trans &trans &trans &trans               &none &none
-                &mmv -200 0 &mmv 0 -200    &mmv 0 200     &mmv 200 0 &trans           &trans &mkp MB2 &mkp MB1 &trans &trans           &none &none
-                &trans      &mmv 140 140   &mmv -140 -140 &trans     &trans           &trans &trans &trans &trans &trans               &none
+                &trans        &mmv <-140 140>  &mmv <140 -140>  &trans     &trans           &trans &trans &trans &trans &trans               &none &none
+                &mmv <-200 0> &mmv <0 -200>    &mmv <0 200>     &mmv <200 0> &trans           &trans &mkp MB2 &mkp MB1 &trans &trans           &none &none
+                &trans        &mmv <140 140>   &mmv <-140 -140> &trans     &trans           &trans &trans &trans &trans &trans               &none
                 &trans &trans &kp LCTRL           &trans &trans &trans
             >;
         };
         ms_slow {
             bindings = <&none    
-                &trans      &mmv -35 35  &mmv 35 -35  &trans     &trans           &trans &trans &trans &trans &trans               &none &none
-                &mmv -50 0  &mmv 0 -50   &mmv 0 50    &mmv 50 0  &trans           &trans &mkp MB2 &mkp MB1 &trans &trans           &none &none
-                &trans      &mmv 35 35   &mmv -35 -35 &trans     &trans           &trans &trans &trans &trans &trans               &none
+                &trans        &mmv <-35 35>  &mmv <35 -35>  &trans     &trans           &trans &trans &trans &trans &trans               &none &none
+                &mmv <-50 0>  &mmv <0 -50>   &mmv <0 50>    &mmv <50 0>  &trans           &trans &mkp MB2 &mkp MB1 &trans &trans           &none &none
+                &trans        &mmv <35 35>   &mmv <-35 -35> &trans     &trans           &trans &trans &trans &trans &trans               &none
                 &trans &trans &kp LCTRL           &trans &trans &trans
             >;
         };
