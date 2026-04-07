@@ -11,7 +11,7 @@
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 600
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 10
 #include <dt-bindings/zmk/pointing.h>
-#define ms_move(name, x, y) name: name { compatible = "zmk,behavior-mouse-move"; x-speed = <x>; y-speed = <y>; };    
+#define ms_move(name, x, y) name: name { compatible = "zmk,behavior-mouse-move"; x-speed = <x>; y-speed = <y>; }
 
 
 / {
