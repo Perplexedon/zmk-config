@@ -12,6 +12,10 @@
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 10
 #include <dt-bindings/zmk/pointing.h>
 
+#define MS_BASE 500
+#define MS_SLOW 200
+#define MS_FAST 1000
+
 / {
     macros {
         pass0: pass0 {
@@ -78,26 +82,26 @@
         };
         ms {
             bindings = <&none    
-                &trans             &mmv MOVE(-70, 70)  &mmv MOVE(70, -70)    &trans            &trans           &trans &trans &trans &trans &mo 6                    &none &none
-                &mmv MOVE(-100, 0) &mmv MOVE(0, -100)  &mmv MOVE(0, 100)     &mmv MOVE(100, 0) &trans           &trans &mkp MB2 &mkp MB1 &mo 5 &mo 4                 &none &none
-                &trans             &mmv MOVE(70, 70)   &mmv MOVE(-70, -70)   &trans            &trans           &trans &trans &trans &trans &trans                   &none
+                &trans                 &mmv MOVE(-MS_BASE*7/10, MS_BASE*7/10) &mmv MOVE(MS_BASE*7/10,-MS_BASE*7/10)  &trans                &trans           &trans &trans &trans &trans &mo 6                    &none &none
+                &mmv MOVE(-MS_BASE, 0) &mmv MOVE(0, -MS_BASE)                 &mmv MOVE(0, MS_BASE)                  &mmv MOVE(MS_BASE, 0) &trans           &trans &mkp MB2 &mkp MB1 &mo 5 &mo 4                 &none &none
+                &trans                 &mmv MOVE(MS_BASE*7/10, MS_BASE*7/10)  &mmv MOVE(-MS_BASE*7/10,-MS_BASE*7/10) &trans                &trans           &trans &trans &trans &trans &trans                   &none
                 &trans &trans &kp LCTRL           &trans &trans &trans
             >;
         };
         ms_fast {
             bindings = <&none    
-                &trans             &mmv MOVE(-140, 140)  &mmv MOVE(140, -140)  &trans            &trans           &trans &trans &trans &trans &trans               &none &none
-                &mmv MOVE(-200, 0)  &mmv MOVE(0, -200)   &mmv MOVE(0, 200)     &mmv MOVE(200, 0) &trans           &trans &trans &trans &trans &trans               &none &none
-                &trans             &mmv MOVE(140, 140)   &mmv MOVE(-140, -140) &trans            &trans           &trans &trans &trans &trans &trans               &none
-                &trans &trans &kp LCTRL           &trans &trans &trans
+                &trans                 &mmv MOVE(-MS_FAST*7/10, MS_FAST*7/10) &mmv MOVE(MS_FAST*7/10, -MS_FAST*7/10) &trans                &trans           &trans &trans &trans &trans &trans                   &none &none
+                &mmv MOVE(-MS_FAST, 0) &mmv MOVE(0, -MS_FAST)                 &mmv MOVE(0, MS_FAST)                  &mmv MOVE(MS_FAST, 0) &trans           &trans &trans &trans &trans &trans                   &none &none
+                &trans                 &mmv MOVE(MS_FAST*7/10, MS_FAST*7/10)  &mmv MOVE(-MS_FAST*7/10,-MS_FAST*7/10) &trans                &trans           &trans &trans &trans &trans &trans                   &none
+                &trans &trans &trans           &trans &trans &trans
             >;
         };
         ms_slow {
             bindings = <&none    
-                &trans             &mmv MOVE(-35, 35)  &mmv MOVE(35, -35)  &trans            &trans           &trans &trans &trans &trans &trans               &none &none
-                &mmv MOVE(-50, 0)  &mmv MOVE(0, -50)   &mmv MOVE(0, 50)    &mmv MOVE(50, 0)  &trans           &trans &trans &trans &trans &trans               &none &none
-                &trans             &mmv MOVE(35, 35)   &mmv MOVE(-35, -35) &trans            &trans           &trans &trans &trans &trans &trans               &none
-                &trans &trans &kp LCTRL           &trans &trans &trans
+                &trans                 &mmv MOVE(-MS_SLOW*7/10, MS_SLOW*7/10) &mmv MOVE(MS_SLOW*7/10, -MS_SLOW*7/10) &trans                &trans           &trans &trans &trans &trans &trans                   &none &none
+                &mmv MOVE(-MS_SLOW, 0) &mmv MOVE(0, -MS_SLOW)                 &mmv MOVE(0, MS_SLOW)                  &mmv MOVE(MS_SLOW, 0) &trans           &trans &trans &trans &trans &trans                   &none &none
+                &trans                 &mmv MOVE(MS_SLOW*7/10, MS_SLOW*7/10)  &mmv MOVE(-MS_SLOW*7/10,-MS_SLOW*7/10) &trans                &trans           &trans &trans &trans &trans &trans                   &none
+                &trans &trans &trans           &trans &trans &trans
             >;
         };
         bt {
