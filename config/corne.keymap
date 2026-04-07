@@ -10,9 +10,8 @@
 
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 600
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 10
+#define MOUSEKEY_TIME_TO_MAX 0
 #include <dt-bindings/zmk/pointing.h>
-
-#include "keymap.dtsi"
 
 #define MS_BASE 500
 #define MS_SLOW 200

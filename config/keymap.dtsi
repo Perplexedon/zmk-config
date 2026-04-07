@@ -1,4 +1,0 @@
-&mmv {
-    time-to-max-speed = <0>;
-    acceleration-exponent = <1>;
-};
