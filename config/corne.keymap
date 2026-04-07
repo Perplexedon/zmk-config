@@ -53,80 +53,61 @@
     keymap {
         compatible = "zmk,keymap";
         base {
-            bindings = <
-                &none        
-                &kp Q &kp W &kp F &kp P &kp B           &kp J &kp L &kp U &kp Y &kp SEMI
-                &none &none        
-                &kp A &kp R &kp S &kp T &kp G           &kp M &kp N &kp E &kp I &kp O            
-                &none &none
-                &kp Z &kp X &kp C &kp D &kp V           &kp K &kp H &kp COMMA &kp DOT &kp FSLH         
-                &none 
+            bindings = <&none        
+                &kp Q &kp W &kp F &kp P &kp B           &kp J &kp L &kp U &kp Y &kp SEMI                 &none &none        
+                &kp A &kp R &kp S &kp T &kp G           &kp M &kp N &kp E &kp I &kp O                    &none &none
+                &kp Z &kp X &kp C &kp D &kp V           &kp K &kp H &kp COMMA &kp DOT &kp FSLH           &none 
                 &kp BSPC &kp SPACE &mo cmd          &mo sym &kp LSHFT &mo ms
             >;
         };
         cmd {
-            bindings = <
-                &none    
-                &kp CAPS &kp PG_UP &kp PG_DN &kp DEL &kp TAB         &kp F1 &kp F2 &kp F3 &kp F4 &kp F5
-                &none &none 
-                &kp LEFT &kp UP &kp DOWN &kp RIGHT &kp ESC           &kp F6 &kp F7 &kp F8 &kp F9 &kp F10
-                &none &none  
-                &kp LSHFT &kp LCTRL &kp LALT &kp LGUI &kp ENTER      &kp F11 &kp F12 &kp GRAVE &kp HOME &kp END
-                &none
+            bindings = <&none    
+                &kp CAPS &kp PG_UP &kp PG_DN &kp DEL &kp TAB         &kp F1 &kp F2 &kp F3 &kp F4 &kp F5                    &none &none 
+                &kp LEFT &kp UP &kp DOWN &kp RIGHT &kp ESC           &kp F6 &kp F7 &kp F8 &kp F9 &kp F10                   &none &none  
+                &kp LSHFT &kp LCTRL &kp LALT &kp LGUI &kp ENTER      &kp F11 &kp F12 &kp GRAVE &kp HOME &kp END            &none
                 &trans &kp LCTRL &trans      &kp LCTRL &trans &trans
             >;
         };
         sym {
-            bindings = <
-                &none    
-                &kp LS(N1) &kp LS(N2) &kp LS(N3) &kp LS(N4) &kp LS(N5)       &kp LS(N6) &kp LS(N7) &kp LS(N8) &kp LS(N9) &kp LS(N0)
-                &none &none
-                &kp H &kp K &kp J &kp L &kp BSLH                  &kp SQT &kp MINUS &plus_equals &kp LBKT &kp RBKT
-                &none &none
-                &kp N1 &kp N2 &kp N3 &kp N4 &kp N5                &kp N6  &kp N7 &kp N8 &kp N9 &kp N0 
-                &none
+            bindings = <&none    
+                &kp LS(N1) &kp LS(N2) &kp LS(N3) &kp LS(N4) &kp LS(N5)       &kp LS(N6) &kp LS(N7) &kp LS(N8)   &kp LS(N9) &kp LS(N0)         &none &none
+                &kp H      &kp K      &kp J      &kp L      &kp BSLH         &kp SQT    &kp MINUS  &plus_equals &kp LBKT   &kp RBKT           &none &none
+                &kp N1     &kp N2     &kp N3     &kp N4     &kp N5           &kp N6     &kp N7     &kp N8       &kp N9     &kp N0             &none
                 &trans &trans &kp LCTRL           &trans &trans &trans
             >;
         };
         bt {
-            bindings = <
-                &none    
-                &bt BT_SEL 5 &bt BT_SEL 6 &bt BT_SEL 7 &bt BT_SEL 8 &bt BT_CLR         &trans &trans &trans &trans &trans
-                &none &none   
-                &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4          &trans &trans &trans &trans &trans
-                &none &none    
-                &trans &trans &trans &trans &trans         &trans &trans &trans &trans &trans
-                &none
+            bindings = <&none    
+                &bt BT_SEL 5 &bt BT_SEL 6 &bt BT_SEL 7 &bt BT_SEL 8 &bt BT_CLR         &trans &trans &trans &trans &trans              &none &none   
+                &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4       &trans &trans &trans &trans &trans              &none &none    
+                &trans &trans &trans &trans &trans                                     &trans &trans &trans &trans &trans              &none
                 &trans &trans &trans        &trans &trans &trans
             >;
         };
 
         ms {
             bindings = <&none    
-                &trans      &mmv -70 70  &mmv 70 -70  &trans     &trans           &trans &trans &trans &trans &mo bt               &none &none
-                &mmv -100 0 &mmv 0 -100  &mmv 0 100   &mmv 100 0 &trans           &trans &mkp MB2 &mkp MB1 &mo ms_slow &mo ms_fast           &none &none
-                &trans      &mmv 70 70   &mmv 70 -70  &trans     &trans           &trans &trans &trans &trans &trans               &none
+                &trans      &mmv -70 70  &mmv 70 -70  &trans     &trans           &trans &trans &trans &trans &mo bt                    &none &none
+                &mmv -100 0 &mmv 0 -100  &mmv 0 100   &mmv 100 0 &trans           &trans &mkp MB2 &mkp MB1 &mo ms_slow &mo ms_fast      &none &none
+                &trans      &mmv 70 70   &mmv -70 -70 &trans     &trans           &trans &trans &trans &trans &trans                    &none
                 &trans &trans &kp LCTRL           &trans &trans &trans
             >;
         };
         ms_fast {
             bindings = <&none    
                 &trans      &mmv -140 140  &mmv 140 -140  &trans     &trans           &trans &trans &trans &trans &trans               &none &none
-                &mmv -200 0 &mmv 0 -200    &mmv 0 200     &mmv 200 0 &trans           &trans &mkp MB2 &mkp MB1 &trans &trans            &none &none
-                &trans      &mmv 140 140   &mmv 140 -140  &trans     &trans           &trans &trans &trans &trans &trans               &none
+                &mmv -200 0 &mmv 0 -200    &mmv 0 200     &mmv 200 0 &trans           &trans &mkp MB2 &mkp MB1 &trans &trans           &none &none
+                &trans      &mmv 140 140   &mmv -140 -140 &trans     &trans           &trans &trans &trans &trans &trans               &none
                 &trans &trans &kp LCTRL           &trans &trans &trans
             >;
         };
         ms_slow {
             bindings = <&none    
                 &trans      &mmv -35 35  &mmv 35 -35  &trans     &trans           &trans &trans &trans &trans &trans               &none &none
-                &mmv -50 0  &mmv 0 -50   &mmv 0 50    &mmv 50 0  &trans           &trans &mkp MB2 &mkp MB1 &trans &trans            &none &none
-                &trans      &mmv 35 35   &mmv 35 -35  &trans     &trans           &trans &trans &trans &trans &trans               &none
+                &mmv -50 0  &mmv 0 -50   &mmv 0 50    &mmv 50 0  &trans           &trans &mkp MB2 &mkp MB1 &trans &trans           &none &none
+                &trans      &mmv 35 35   &mmv -35 -35 &trans     &trans           &trans &trans &trans &trans &trans               &none
                 &trans &trans &kp LCTRL           &trans &trans &trans
             >;
         };
-
-
-
     };
 };
